@@ -1,0 +1,100 @@
+body {
+  background-color: rgb(191, 225, 246);
+  /* 縦方向にスクロールして、はみ出た部分は隠れる */
+  overflow-y: hidden;
+}
+
+.formContainer {
+  height: 100vh;
+  width: 100%;
+  /* 要素をフレックスコンテナとして指定する */
+  display: flex;
+  /* 縦方向に中央に寄せる */
+  align-items: center;
+  /* 横方向に中央に寄せる */
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.formContainer form {
+  background-color: rgba(255, 255, 255, 0.507);
+  /* 今のブラウザ画面の横幅70%表示。※ブラウザを大きさに伴い変化する */
+  width: 70%;
+  /* 最大の横幅を設定。どれだけブラウザが大きくなってもこれ以上は大きくならない。 */
+  max-width: 450px;
+  /* formタグ要素内の内側余白を上下左右開ける。 */
+  padding: 30px;
+  /* 要素に丸みを帯びさせる。 */
+  border-radius: 10px;
+  /* 要素の枠線 */
+  border: 1px solid burlywood;
+  box-shadow: 16px 23px 14px -4px #777777;
+  border-radius: 16px;
+}
+
+.uiForm {
+  display: flex;
+  /* 要素を縦並びにする */
+  flex-direction: column;
+  align-items: center;
+  /* 等間隔で要素ごとの隙間を開ける */
+  justify-content: space-evenly;
+  height: 400px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  /* 親要素※ログインフォームに対しての100% */
+  width: 100%;
+}
+
+.formField input {
+  border: 1px solid gray;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* クラス名：focusで要素を選択したときのデザインを追加できる */
+.formField input:focus {
+  outline: none;
+}
+
+.formField label {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+button {
+  background-color: rgb(102, 119, 220);
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  /* ふわっと色が変わる */
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: rgb(49, 66, 179);
+}
+
+.errorMsg {
+  color: red;
+  margin: 0;
+  /* flexコンテナ内のアイテム配置を左寄せにする。text-align:centerはテキストや内包されたインライン要素の水平方向の中央寄せを指定する。 */
+  align-self: flex-start;
+}
+
+.msgOk {
+  color: green;
+  margin-top: 15px;
+}
